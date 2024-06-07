@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .title }}</title>
+
+    <link rel="stylesheet" href="/static/main.css" />
+    <link rel="stylesheet" href="/static/styles/pages/action.css" />
+  </head>
+
+  <body>
+    <div class="block">
+      <div class="form">
+        <h2>Sign Up</h2>
+        <form id="signupForm" action="/api/v1/signup/" method="POST" enctype="multipart/form-data">
+          <input type="text" id="Name" name="Name" placeholder="Name" required />
+          <input type="text" id="Username" name="Username" placeholder="Username" required />
+          <input type="email" id="Email" name="Email" placeholder="Email" required />
+          <input type="password" id="Password" name="Password" placeholder="Password" required />
+
+          <label for="Picture">Profile Picture</label>
+          <input type="file" id="Picture" placeholder="Profile Picture" name="Picture" />
+      
+          <button type="submit">Sign Up</button>
+        </form>
+
+        <p>Already have an account? <a href="/signin/" class="link">Sign In</a></p>
+        <a href="/" class="link">Enter as a Guest</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  app:
+    build: .
+    ports:
+      - "2024:2024"
+    depends_on:
+      - final_db
+    environment:
+      - GIN_MODE=release
+
+  final_db:
+    container_name: final_db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=admin
+    image: postgres:alpine3.19
